@@ -1,0 +1,9 @@
+@import '../../styles/colors';
+
+.container {
+  background-color: $color-white;
+  padding-top: 27px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
