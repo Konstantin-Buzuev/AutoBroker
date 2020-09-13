@@ -1,0 +1,116 @@
+@import '../../styles/mixins', '../../styles/colors';
+
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  &_desktop {
+    max-width: 1151px;
+  }
+  &_laptop {
+    max-width: 932px;
+  }
+  &_tablet,
+  &_iphone {
+    max-width: 420px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  &_mobile {
+    max-width: 292px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+}
+.achievement {
+  position: relative;
+  &_desktop {
+    &:nth-of-type(1) {
+      margin-right: 144px;
+    }
+    &:nth-of-type(2) {
+      margin-right: 187px;
+    }
+  }
+  &_laptop {
+    &:nth-of-type(1) {
+      margin-right: 163px;
+    }
+    &:nth-of-type(2) {
+      margin-right: 203px;
+    }
+  }
+  &__number {
+    @include AchievementNumber;
+    color: $color-number;
+    text-align: left;
+    vertical-align: bottom;
+    &_desktop {
+      font-size: 158px;
+    }
+    &_laptop,
+    &_tablet,
+    &_iphone,
+    &_mobile {
+      font-size: 100px;
+    }
+  }
+  &__description {
+    @include AchievementDescription;
+    color: $color-black;
+    position: absolute;
+    &_desktop {
+      top: 43px;
+      &:nth-of-type(1) {
+        left: 118px;
+        width: 237px;
+      }
+      &:nth-of-type(2) {
+        left: 97px;
+        width: 223px;
+      }
+      &:nth-of-type(3) {
+        left: 86px;
+        width: 305px;
+      }
+    }
+    &_laptop {
+      top: 42px;
+      &:nth-of-type(1) {
+        left: 51px;
+        width: 190px;
+      }
+      &:nth-of-type(2) {
+        left: 54px;
+        width: 179px;
+      }
+      &:nth-of-type(3) {
+        left: 53px;
+        width: 241px;
+      }
+    }
+    &_tablet,
+    &_iphone,
+    &_mobile {
+      top: 43px;
+      width: 369px;
+      &:nth-of-type(1) {
+        left: 51px;
+      }
+      &:nth-of-type(2) {
+        left: 54px;
+      }
+      &:nth-of-type(3) {
+        left: 53px;
+      }
+    }
+    &_mobile {
+      width: 292px;
+    }
+  }
+}

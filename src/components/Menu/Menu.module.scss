@@ -1,0 +1,47 @@
+@import '../../styles/colors', '../../styles/mixins';
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: $menu-background;
+  transition: all 500ms ease-in-out;
+
+  &_hide {
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 931px;
+    padding-top: 135px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 70px 114px 70px 60px 60px 156px;
+    &_hide {
+      visibility: hidden;
+    }
+  }
+  &__item {
+    color: $color-white;
+    & span {
+      cursor: pointer;
+    }
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+
+    &_section {
+      @include MenuSection;
+    }
+
+    &_subsection {
+      @include MenuSubsection;
+    }
+  }
+}
