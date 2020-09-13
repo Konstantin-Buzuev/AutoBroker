@@ -1,0 +1,31 @@
+@import './colors', './fonts';
+
+// Fonts
+@mixin FontStyle {
+  font-family: 'RotondaC';
+  font-style: normal;
+}
+@mixin Phone {
+  @include FontStyle;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+}
+@mixin Address {
+  @include FontStyle;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+@mixin MenuSection {
+  @include FontStyle;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 35px;
+}
+@mixin MenuSubsection {
+  @include FontStyle;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 22px;
+}
