@@ -36,12 +36,10 @@ class Header extends React.Component {
               this.props.resolution === screen.IPHONE) &&
               styles.header__logo_small,
             this.props.resolution === screen.MOBILE && styles.header__logo_wide,
-            this.props.resolution === screen.DESKTOP &&
-              styles.header__logo_desktop,
-            this.props.resolution === screen.LAPTOP &&
-              styles.header__logo_laptop,
-            this.props.resolution === screen.TABLET &&
-              styles.header__logo_tablet
+            this.props.resolution === screen.IPHONE &&
+              styles.header__logo_iphoneMargin,
+            this.props.resolution === screen.MOBILE &&
+              styles.header__logo_mobileMargin
           )}
         ></div>
         <Contacts />

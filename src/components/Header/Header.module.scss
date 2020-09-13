@@ -17,28 +17,22 @@
   &_iphone {
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-top: 8px;
     max-width: 330px;
   }
   &_mobile {
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     max-width: 290px;
   }
   &__logo {
     background-image: url('../../assets/images/logo.jpg');
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    &_desktop {
-      margin-right: 222px;
-    }
-    &_laptop {
-      margin-right: 102px;
-    }
-    &_tablet {
-      margin-right: 60px;
+    &_iphoneMargin {
+      margin-bottom: 32px;
     }
     &_big {
       min-width: 228px;
