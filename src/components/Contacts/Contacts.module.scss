@@ -4,36 +4,51 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 270px;
   &_desktop {
     margin-left: 222px;
+    max-width: 270px;
   }
   &_laptop {
     margin-left: 102px;
+    max-width: 253px;
   }
   &_tablet {
     margin-left: 60px;
+    max-width: 201px;
+  }
+  &_iphone {
+    max-width: 330px;
+  }
+  &_mobile {
+    max-width: 290px;
   }
 
   &__phone {
     @include Phone;
     margin-bottom: 13px;
-    &_left {
+    &_desktop,
+    &_laptop,
+    &_tablet {
       text-align: left;
     }
-    &_center {
+    &_iphone,
+    &_mobile {
       text-align: center;
     }
   }
   &__address {
     @include Address;
-    &_left {
+    &_desktop,
+    &_laptop {
       text-align: left;
     }
-    &_center {
-      text-align: center;
+    &_tablet,
+    &_iphone {
+      text-align: left;
+      font-size: 13px;
     }
-    &_small {
+    &_mobile {
+      text-align: center;
       font-size: 13px;
     }
   }
