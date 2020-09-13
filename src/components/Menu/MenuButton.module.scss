@@ -5,9 +5,15 @@
   z-index: 2;
   min-width: 37px;
   min-height: 26px;
+  &_iphone {
+    min-width: 37px;
+    min-height: 26px;
+    top: 15px;
+  }
   &_mobile {
     min-width: 34px;
     min-height: 34px;
+    top: 13px;
   }
 
   &__line {

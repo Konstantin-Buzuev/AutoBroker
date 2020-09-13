@@ -30,6 +30,7 @@ class Menu extends React.Component {
         <div
           className={classNames(
             styles.button,
+            this.props.resolution === screen.IPHONE && styles.button_iphone,
             this.props.resolution === screen.MOBILE && styles.button_mobile
           )}
           onClick={this.onClick}
