@@ -67,6 +67,24 @@ const initialState = {
       type: menu.SUBSECTION,
     },
   ],
+  mainTitleUp: 'новый формат',
+  mainTitleDown: 'продажи авто с пробегом',
+  achievements: [
+    {
+      number: 150,
+      description: '150 метров выставочного стенда по центральной улице Самары',
+    },
+    {
+      number: 35,
+      description:
+        '35 менеджеров будут работать над продажей вашего автомобиля',
+    },
+    {
+      number: 20,
+      description:
+        '20 банков-партнеров принимают заявки на оформление кредита для вашего автомобиля',
+    },
+  ],
 }
 
 export default function resolutionReducer(state = initialState, action) {
