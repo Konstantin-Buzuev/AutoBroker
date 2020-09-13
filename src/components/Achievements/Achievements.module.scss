@@ -29,6 +29,14 @@
 }
 .achievement {
   position: relative;
+  &_desktop {
+    &:nth-of-type(1) {
+      margin-right: 144px;
+    }
+    &:nth-of-type(2) {
+      margin-right: 187px;
+    }
+  }
   &_laptop {
     &:nth-of-type(1) {
       margin-right: 163px;
@@ -56,6 +64,21 @@
     @include AchievementDescription;
     color: $color-black;
     position: absolute;
+    &_desktop {
+      top: 43px;
+      &:nth-of-type(1) {
+        left: 118px;
+        width: 237px;
+      }
+      &:nth-of-type(2) {
+        left: 97px;
+        width: 223px;
+      }
+      &:nth-of-type(3) {
+        left: 86px;
+        width: 305px;
+      }
+    }
     &_laptop {
       top: 42px;
       &:nth-of-type(1) {
