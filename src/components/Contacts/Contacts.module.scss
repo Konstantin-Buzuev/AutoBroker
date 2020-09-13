@@ -1,0 +1,40 @@
+@import '../../styles/mixins';
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 270px;
+  &_desktop {
+    margin-left: 222px;
+  }
+  &_laptop {
+    margin-left: 102px;
+  }
+  &_tablet {
+    margin-left: 60px;
+  }
+
+  &__phone {
+    @include Phone;
+    margin-bottom: 13px;
+    &_left {
+      text-align: left;
+    }
+    &_center {
+      text-align: center;
+    }
+  }
+  &__address {
+    @include Address;
+    &_left {
+      text-align: left;
+    }
+    &_center {
+      text-align: center;
+    }
+    &_small {
+      font-size: 13px;
+    }
+  }
+}
