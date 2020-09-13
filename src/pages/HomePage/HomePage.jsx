@@ -8,8 +8,10 @@ import { screen } from '../../data/resolution'
 
 import Header from '../../components/Header/Header'
 import Menu from '../../components/Menu/Menu'
-import Title from '../../components/Title/Title'
+import MainTitle from '../../components/Titles/MainTitle'
+import AuxTitle from '../../components/Titles/AuxTitle'
 import Achievements from '../../components/Achievements/Achievements'
+import Services from '../../components/Services/Services'
 
 import styles from './HomePage.module.scss'
 
@@ -36,8 +38,10 @@ class HomePage extends React.Component {
           <Header />
           {(this.props.resolution === screen.DESKTOP ||
             this.props.resolution === screen.LAPTOP) && <Menu />}
-          <Title />
+          <MainTitle />
           <Achievements />
+          <Services />
+          <AuxTitle />
         </div>
       </ReactResizeDetector>
     )

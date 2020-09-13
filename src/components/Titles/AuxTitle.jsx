@@ -1,17 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import styles from './Title.module.scss'
+import styles from './AuxTitle.module.scss'
 
 import { connect } from 'react-redux'
 
 import { screen } from '../../data/resolution'
 
-class Contacts extends React.Component {
+class MainTitle extends React.Component {
   static propTypes = {
     resolution: PropTypes.number.isRequired,
-    mainTitleUp: PropTypes.string.isRequired,
-    mainTitleDown: PropTypes.string.isRequired,
+    auxTitle: PropTypes.string.isRequired,
   }
 
   render() {
@@ -26,17 +25,14 @@ class Contacts extends React.Component {
           this.props.resolution === screen.MOBILE && styles.title_mobile
         )}
       >
-        {this.props.mainTitleUp}
-        <br />
-        {this.props.mainTitleDown}
+        {this.props.auxTitle}
       </h1>
     )
   }
 }
 const mapStateToProps = ({ contentReducer }) => ({
   resolution: contentReducer.resolution,
-  mainTitleUp: contentReducer.mainTitleUp,
-  mainTitleDown: contentReducer.mainTitleDown,
+  auxTitle: contentReducer.auxTitle,
 })
 
-export default connect(mapStateToProps)(Contacts)
+export default connect(mapStateToProps)(MainTitle)

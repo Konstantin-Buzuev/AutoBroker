@@ -67,8 +67,7 @@ class Achievements extends React.Component {
       <div
         className={classNames(
           styles.wrapper,
-          this.props.resolution === screen.DESKTOP &&
-            styles.achievements_desktop,
+          this.props.resolution === screen.DESKTOP && styles.wrapper_desktop,
           this.props.resolution === screen.LAPTOP && styles.wrapper_laptop,
           this.props.resolution === screen.TABLET && styles.wrapper_tablet,
           this.props.resolution === screen.IPHONE && styles.wrapper_iphone,
