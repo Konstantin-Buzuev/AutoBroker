@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 5;
   background-color: $menu-background;
   transition: all 500ms ease-in-out;
 
@@ -26,6 +27,9 @@
   }
   &__item {
     color: $color-white;
+    & span {
+      cursor: pointer;
+    }
     &:nth-of-type(4),
     &:nth-of-type(5) {
       grid-column-start: 1;

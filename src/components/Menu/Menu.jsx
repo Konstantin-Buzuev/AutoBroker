@@ -26,7 +26,7 @@ class Menu extends React.Component {
         )}
         key={index}
       >
-        {item.name}
+        <span>{item.name}</span>
       </div>
     ))
 

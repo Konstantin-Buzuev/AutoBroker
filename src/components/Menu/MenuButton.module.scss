@@ -1,8 +1,9 @@
 @import '../../styles/colors', '../../styles/mixins';
 .button {
   position: absolute;
+  cursor: pointer;
   left: 0;
-  z-index: 2;
+  z-index: 6;
   min-width: 37px;
   min-height: 26px;
   &_iphone {
