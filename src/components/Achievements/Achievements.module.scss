@@ -9,16 +9,28 @@
   width: 100%;
   &_desktop {
     max-width: 1151px;
+    position: relative;
+    z-index: 1;
   }
   &_laptop {
     max-width: 932px;
+    position: relative;
+    z-index: 1;
   }
   &_tablet,
   &_iphone {
-    max-width: 420px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
+  }
+  &_tablet {
+    max-width: 420px;
+  }
+  &_iphone {
+    max-width: 510px;
+    padding-left: 60px;
+    padding-right: 30px;
+    box-sizing: border-box;
   }
   &_mobile {
     max-width: 292px;
@@ -32,19 +44,71 @@
   &_desktop {
     &:nth-of-type(1) {
       margin-right: 144px;
+      & .achievement__description {
+        left: 118px;
+        width: 237px;
+      }
     }
     &:nth-of-type(2) {
       margin-right: 187px;
+      & .achievement__description {
+        left: 97px;
+        width: 223px;
+      }
+    }
+    &:nth-of-type(3) .achievement__description {
+      left: 86px;
+      width: 305px;
     }
   }
   &_laptop {
     &:nth-of-type(1) {
       margin-right: 163px;
+      & .achievement__description {
+        left: 51px;
+        width: 190px;
+      }
     }
     &:nth-of-type(2) {
       margin-right: 203px;
+      & .achievement__description {
+        left: 54px;
+        width: 179px;
+      }
+    }
+    &:nth-of-type(3) .achievement__description {
+      left: 53px;
+      width: 241px;
     }
   }
+  &_tablet,
+  &_iphone {
+    &:nth-of-type(1) .achievement__description {
+      left: 51px;
+    }
+    &:nth-of-type(2) .achievement__description {
+      left: 54px;
+    }
+    &:nth-of-type(3) .achievement__description {
+      left: 53px;
+    }
+  }
+  &_mobile {
+    &:nth-of-type(1) .achievement__description {
+      left: 51px;
+    }
+    &:nth-of-type(2) .achievement__description {
+      left: 53px;
+      width: 239px;
+    }
+    &:nth-of-type(3) {
+      margin-bottom: 33px;
+      & .achievement__description {
+        left: 52px;
+      }
+    }
+  }
+
   &__number {
     @include AchievementNumber;
     color: $color-number;
@@ -61,56 +125,16 @@
     }
   }
   &__description {
-    @include AchievementDescription;
+    @include TextMain;
     color: $color-black;
     position: absolute;
-    &_desktop {
-      top: 43px;
-      &:nth-of-type(1) {
-        left: 118px;
-        width: 237px;
-      }
-      &:nth-of-type(2) {
-        left: 97px;
-        width: 223px;
-      }
-      &:nth-of-type(3) {
-        left: 86px;
-        width: 305px;
-      }
-    }
-    &_laptop {
-      top: 42px;
-      &:nth-of-type(1) {
-        left: 51px;
-        width: 190px;
-      }
-      &:nth-of-type(2) {
-        left: 54px;
-        width: 179px;
-      }
-      &:nth-of-type(3) {
-        left: 53px;
-        width: 241px;
-      }
-    }
+    top: 43px;
     &_tablet,
-    &_iphone,
-    &_mobile {
-      top: 43px;
+    &_iphone {
       width: 369px;
-      &:nth-of-type(1) {
-        left: 51px;
-      }
-      &:nth-of-type(2) {
-        left: 54px;
-      }
-      &:nth-of-type(3) {
-        left: 53px;
-      }
     }
     &_mobile {
-      width: 292px;
+      width: 242px;
     }
   }
 }
