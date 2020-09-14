@@ -12,6 +12,7 @@ import MainTitle from '../../components/Titles/MainTitle'
 import AuxTitle from '../../components/Titles/AuxTitle'
 import Achievements from '../../components/Achievements/Achievements'
 import Services from '../../components/Services/Services'
+import Slider from '../../components/Slider/Slider'
 
 import styles from './HomePage.module.scss'
 
@@ -42,6 +43,7 @@ class HomePage extends React.Component {
           <Achievements />
           <Services />
           <AuxTitle />
+          <Slider />
         </div>
       </ReactResizeDetector>
     )
