@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import styles from './Slider.module.scss'
-import Swiper from 'react-id-swiper'
-import 'swiper/swiper.scss'
-
+import Carousel from 'react-elastic-carousel'
 import { connect } from 'react-redux'
 
 import { screen } from '../../data/resolution'
@@ -173,26 +171,14 @@ class Slider extends React.Component {
       </div>
     ))
   render() {
-    const params = {
-      shouldSwiperUpdate: false,
-      watchOverflow: true,
-      initialSlide: 1,
-      autoHeight: true,
-      slideClass: styles.slide,
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        type: 'bullets',
-        clickable: true,
-      },
-      keyboard: {
-        enabled: true,
-        onlyInViewport: false,
-      },
-      loop: true,
-      children: this.renderCards(),
+    let slidesPerScreen = 1 // Mobile, Iphone and Tablet
+    if (
+      this.props.resolution === screen.DESKTOP ||
+      this.props.resolution === screen.LAPTOP
+    ) {
+      slidesPerScreen++
     }
-
+    console.log(slidesPerScreen)
     return (
       <div
         className={classNames(
@@ -221,7 +207,74 @@ class Slider extends React.Component {
         >
           {this.props.carsAmount + this.props.sliderHeader}
         </h2>
-        <Swiper {...params} />
+        <Carousel
+          children={this.renderCards()}
+          className=""
+          style={{}}
+          verticalMode={false}
+          pagination={true}
+          transitionMs={400}
+          itemsToShow={
+            this.props.resolution === screen.DESKTOP ||
+            this.props.resolution === screen.LAPTOP
+              ? 2
+              : 1
+          }
+          itemsToScroll={
+            this.props.resolution === screen.DESKTOP ||
+            this.props.resolution === screen.LAPTOP
+              ? 2
+              : 1
+          }
+          showArrows={false}
+          renderPagination={({ pages, activePage, onClick }) => {
+            return (
+              <div className={classNames(styles.pagination)}>
+                {pages.map((page) => {
+                  const isActivePage = activePage === page
+                  return (
+                    <button
+                      tabIndex="0"
+                      key={page}
+                      onClick={() => onClick(page)}
+                      className={classNames(
+                        styles.pagination__bullet,
+                        this.props.resolution === screen.DESKTOP &&
+                          styles.pagination__bullet_desktop,
+                        this.props.resolution === screen.LAPTOP &&
+                          styles.pagination__bullet_laptop,
+                        this.props.resolution === screen.TABLET &&
+                          styles.pagination__bullet_tablet,
+                        this.props.resolution === screen.IPHONE &&
+                          styles.pagination__bullet_iphone,
+                        this.props.resolution === screen.MOBILE &&
+                          styles.pagination__bullet_mobile,
+                        this.props.resolution === screen.DESKTOP &&
+                          isActivePage &&
+                          styles.pagination__bullet_desktop_active,
+                        this.props.resolution === screen.LAPTOP &&
+                          isActivePage &&
+                          styles.pagination__bullet_laptop_active,
+                        this.props.resolution === screen.TABLET &&
+                          isActivePage &&
+                          styles.pagination__bullet_tablet_active,
+                        this.props.resolution === screen.IPHONE &&
+                          isActivePage &&
+                          styles.pagination__bullet_iphone_active,
+                        this.props.resolution === screen.MOBILE &&
+                          isActivePage &&
+                          styles.pagination__bullet_mobile_active
+                      )}
+                      active={isActivePage.toString()}
+                      type="button"
+                    ></button>
+                  )
+                })}
+              </div>
+            )
+          }}
+        />
+
         <div
           className={classNames(
             styles.slider__button,
@@ -249,7 +302,7 @@ class Slider extends React.Component {
 const mapStateToProps = ({ contentReducer }) => ({
   resolution: contentReducer.resolution,
   carsAmount: contentReducer.carsAmount,
-  cards: contentReducer.cars,
+  cards: contentReducer.cards,
   sliderHeader: contentReducer.sliderHeader,
   sliderButtonText: contentReducer.sliderButtonText,
   slideButtonText: contentReducer.slideButtonText,
