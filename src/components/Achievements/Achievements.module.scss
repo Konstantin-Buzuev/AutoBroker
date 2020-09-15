@@ -10,12 +10,12 @@
   &_desktop {
     max-width: 1151px;
     position: relative;
-    z-index: 1;
+    z-index: 3;
   }
   &_laptop {
     max-width: 932px;
     position: relative;
-    z-index: 1;
+    z-index: 3;
   }
   &_tablet,
   &_iphone {
@@ -41,6 +41,7 @@
 }
 .achievement {
   position: relative;
+
   &_desktop {
     &:nth-of-type(1) {
       margin-right: 144px;
@@ -110,7 +111,7 @@
   }
 
   &__number {
-    @include AchievementNumber;
+    @include TextBold;
     color: $color-number;
     text-align: left;
     vertical-align: bottom;
