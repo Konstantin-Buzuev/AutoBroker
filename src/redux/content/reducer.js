@@ -110,9 +110,9 @@ const initialState = {
   ],
   carsAmount: 298,
   sliderHeader: ' автомобилей в нашей базе',
-  cars: [
+  cards: [
     {
-      model: 'LIFAN SOLANO',
+      model: 'LIFAN SOLANO 1',
       price: 1499000,
       credit: 12000,
       year: 2010,
@@ -124,7 +124,7 @@ const initialState = {
       drive: drive.FRONT,
     },
     {
-      model: 'LIFAN SOLANO',
+      model: 'LIFAN SOLANO 2',
       price: 1499000,
       credit: 12000,
       year: 2010,
@@ -136,7 +136,7 @@ const initialState = {
       drive: drive.FRONT,
     },
     {
-      model: 'LIFAN SOLANO',
+      model: 'LIFAN SOLANO 3',
       price: 1499000,
       credit: 12000,
       year: 2010,
@@ -148,7 +148,7 @@ const initialState = {
       drive: drive.FRONT,
     },
     {
-      model: 'LIFAN SOLANO',
+      model: 'LIFAN SOLANO 4',
       price: 1499000,
       credit: 12000,
       year: 2010,
@@ -160,7 +160,7 @@ const initialState = {
       drive: drive.FRONT,
     },
     {
-      model: 'LIFAN SOLANO',
+      model: 'LIFAN SOLANO 5',
       price: 1499000,
       credit: 12000,
       year: 2010,
@@ -172,7 +172,7 @@ const initialState = {
       drive: drive.FRONT,
     },
     {
-      model: 'LIFAN SOLANO',
+      model: 'LIFAN SOLANO 6',
       price: 1499000,
       credit: 12000,
       year: 2010,
@@ -184,7 +184,7 @@ const initialState = {
       drive: drive.FRONT,
     },
     {
-      model: 'LIFAN SOLANO',
+      model: 'LIFAN SOLANO 7',
       price: 1499000,
       credit: 12000,
       year: 2010,
@@ -196,7 +196,7 @@ const initialState = {
       drive: drive.FRONT,
     },
     {
-      model: 'LIFAN SOLANO',
+      model: 'LIFAN SOLANO 8',
       price: 1499000,
       credit: 12000,
       year: 2010,
