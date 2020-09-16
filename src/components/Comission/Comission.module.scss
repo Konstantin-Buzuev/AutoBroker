@@ -1,0 +1,267 @@
+@import '../../styles/mixins', '../../styles/colors';
+
+@mixin wrapperBody($height, $top) {
+  width: 100%;
+  height: $height;
+  top: $top;
+  margin-bottom: $top;
+}
+
+@mixin wrapperEnding($endingHeight) {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  bottom: -$endingHeight;
+  border-left: 50vw solid $color-white;
+  border-right: 50vw solid $color-white;
+  border-top: $endingHeight solid $pentagon-color;
+}
+
+.wrapper {
+  background: linear-gradient(
+      180deg,
+      $color-white 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    $pentagon-color;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+
+  &_desktop {
+    @include wrapperBody(1394.5px - 140px, -86px);
+
+    &::after {
+      @include wrapperEnding(140px);
+    }
+  }
+
+  &_laptop {
+    @include wrapperBody(1394.5px - 105px, -365px);
+    &::after {
+      @include wrapperEnding(105px);
+    }
+  }
+
+  &_tablet {
+    @include wrapperBody(1394.5px - 83.125px, -379px);
+
+    &::after {
+      @include wrapperEnding(83.125px);
+    }
+  }
+
+  &_iphone {
+    @include wrapperBody(1394.5px - 52px, -497px);
+
+    &::after {
+      @include wrapperEnding(52.5px);
+    }
+  }
+
+  &_mobile {
+    @include wrapperBody(1394.5px - 22px, -429px);
+
+    &::after {
+      @include wrapperEnding(23.33px);
+    }
+  }
+}
+
+.information {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  &_desktop {
+    align-self: flex-start;
+    justify-content: flex-start;
+    margin-left: 145px;
+    margin-bottom: 36px;
+  }
+  &_laptop {
+    margin-top: 281px;
+    margin-bottom: 41px;
+  }
+  &_tablet {
+    margin-top: 307px;
+  }
+  &_iphone {
+    margin-top: 547px;
+  }
+  &_mobile {
+    margin-top: 487px;
+  }
+  &__imageBox {
+    background-image: url('../../assets/images/comission.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat no-repeat;
+    background-position: top right;
+    position: relative;
+    &_desktop {
+      top: -17px;
+      width: 742px;
+      height: 603px;
+      margin-right: 77px;
+    }
+    &_laptop {
+      width: 586px;
+      height: 477px;
+      margin-right: 19px;
+    }
+    &_tablet {
+      width: 486px;
+      height: 396px;
+      margin-right: 9px;
+    }
+    &_iphone,
+    &_mobile {
+      display: none;
+    }
+  }
+  &__container {
+    &_desktop {
+      padding-top: 172px;
+      width: 440px;
+    }
+    &_laptop {
+      padding-top: 151px;
+      width: 460px;
+    }
+    &_tablet {
+      padding-top: 125px;
+      width: 352px;
+    }
+    &_iphone {
+      width: 510px;
+    }
+    &_mobile {
+      width: 290px;
+    }
+  }
+  &__title {
+    @include MainTitle;
+    text-align: left;
+    &_desktop {
+      width: 760px;
+      font-size: 55px;
+      position: relative;
+      left: -171px;
+      margin-bottom: 26px;
+    }
+    &_laptop {
+      font-size: 42px;
+      margin-bottom: 21px;
+    }
+    &_tablet {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+    &_iphone {
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+    &_mobile {
+      font-size: 26px;
+      margin-bottom: 13px;
+    }
+  }
+  &__slogan {
+    @include TextSlogan;
+    &_desktop {
+      font-size: 36px;
+      margin-bottom: 48px;
+    }
+    &_laptop {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+    &_tablet,
+    &_iphone {
+      font-size: 26px;
+      margin-bottom: 25px;
+    }
+    &_mobile {
+      font-size: 24px;
+      margin-bottom: 28px;
+    }
+  }
+  &__listItem {
+    list-style: none;
+    background-image: url('../../assets/icons/list-marker.svg');
+    background-repeat: no-repeat;
+    @include TextMain;
+    &_desktop {
+      background-size: 27px 20px;
+      padding-left: 52px;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    &_laptop {
+      background-size: 22px 16px;
+      padding-left: 38px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    &_tablet,
+    &_iphone,
+    &_mobile {
+      background-size: 22px 16px;
+      padding-left: 38px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.offer {
+  border: 4px solid $offer-border-color;
+  box-sizing: border-box;
+  border-radius: 20px;
+  color: $color-red;
+  text-align: center;
+  &_desktop {
+    max-width: 753px;
+    padding: 30px 30px 32px 30px;
+  }
+  &_laptop,
+  &_tablet {
+    max-width: 608px;
+    padding: 30px 40px 28px 40px;
+  }
+  &_iphone {
+    max-width: 510px;
+    padding: 21px 18px 20px 23px;
+  }
+  &_mobile {
+    max-width: 297px;
+    padding: 21px 25px 25px 23px;
+  }
+  &__text {
+    @include TextBold;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &_desktop {
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+    &_laptop,
+    &_tablet {
+      margin-bottom: 7px;
+      font-size: 16px;
+    }
+    &_iphone,
+    &_mobile {
+      font-size: 16px;
+    }
+  }
+}
