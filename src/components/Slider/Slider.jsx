@@ -123,7 +123,7 @@ class Slider extends React.Component {
                 styles.slide__credit_mobile
             )}
           >
-            {`в кредит от ${this.handleNumber(item.price)} ₽`}
+            {`в кредит от ${this.handleNumber(item.credit)} ₽`}
           </div>
           <ul
             className={classNames(
@@ -171,14 +171,6 @@ class Slider extends React.Component {
       </div>
     ))
   render() {
-    let slidesPerScreen = 1 // Mobile, Iphone and Tablet
-    if (
-      this.props.resolution === screen.DESKTOP ||
-      this.props.resolution === screen.LAPTOP
-    ) {
-      slidesPerScreen++
-    }
-    console.log(slidesPerScreen)
     return (
       <div
         className={classNames(
@@ -220,16 +212,24 @@ class Slider extends React.Component {
               ? 2
               : 1
           }
-          itemsToScroll={
-            this.props.resolution === screen.DESKTOP ||
-            this.props.resolution === screen.LAPTOP
-              ? 2
-              : 1
-          }
           showArrows={false}
           renderPagination={({ pages, activePage, onClick }) => {
             return (
-              <div className={classNames(styles.pagination)}>
+              <div
+                className={classNames(
+                  styles.pagination,
+                  this.props.resolution === screen.DESKTOP &&
+                    styles.pagination_desktop,
+                  this.props.resolution === screen.LAPTOP &&
+                    styles.pagination_laptop,
+                  this.props.resolution === screen.TABLET &&
+                    styles.pagination_tablet,
+                  this.props.resolution === screen.IPHONE &&
+                    styles.pagination_iphone,
+                  this.props.resolution === screen.MOBILE &&
+                    styles.pagination_mobile
+                )}
+              >
                 {pages.map((page) => {
                   const isActivePage = activePage === page
                   return (

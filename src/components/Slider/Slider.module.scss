@@ -8,21 +8,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  z-index: 2;
   &_desktop {
-    height: 730px;
-    padding: 70px 0px 54px 0px;
+    padding: 70px 0px 60px 0px;
   }
   &_laptop,
   &_tablet {
-    height: 610px;
-    padding: 50px 0px 51px 0px;
+    padding: 50px 0px 57px 0px;
   }
   &_iphone {
-    height: 511px;
-    padding: 40px 0px 35px 0px;
+    padding: 40px 0px 41px 0px;
   }
   &_mobile {
-    height: 736px;
     padding: 30px 0px 30px 0px;
   }
   &__header {
@@ -295,15 +292,26 @@
   display: flex;
   flex-wrap: wrap;
   direction: ltr;
-  margin-top: 20px;
-  margin-bottom: 40px;
   transition: all 250ms ease;
   transition-property: border;
-  &_desktop,
+  &_desktop {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
   &_laptop,
   &_tablet {
     margin-top: 20px;
+    margin-bottom: 30px;
   }
+  &_iphone {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  &_mobile {
+    margin-top: 12px;
+    margin-bottom: 20px;
+  }
+
   &__bullet {
     box-sizing: border-box;
     border-radius: 50%;
